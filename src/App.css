@@ -1,52 +1,93 @@
 body {
-  background-color: black;
+  /* background-color: black; */
   color: white;
+  background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/11025.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /* ------------------------ */
 /*--------Home----- */
 /* ------------------------ */
+.Home-container {
+  /* border: #ffff00 1px solid; */
+  width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* flex-direction: column; */
+}
+/* .hero {
+  height: 400px;
+  object-fit: cover;
+  object-position: 0 15%;
+} */
 
-.logo-home img {
-  width: 62.5rem;
-  height: 31.25rem;
+/* .logo-home img {
+  width: 118.75rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
-  object-fit: contain;
-}
 
-.link-univers {
-  /* color: white; */
+  border: 1px white solid;
+} */
+
+.home-title {
+  color: white;
   font-size: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto 0;
-  border: blue 2px solid;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: auto;
+  /* border: blue 2px solid; */
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px;
 }
-.link-univers h1:hover {
+.home-title h1:hover {
   color: #e4fde1;
+}
+
+.button-direction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* flex-direction: column; */
+  margin: 0 auto;
+}
+
+.button-direction div > button {
+  width: 100px;
+  height: 30px;
+  background-color: black;
+  color: wheat;
+  box-shadow: 0 0 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+}
+.button-direction div > button:hover {
+  color: white;
 }
 /* ------------------------ */
 /*--------Header pages----- */
 /* ------------------------ */
 
 .header-container {
-  border: goldenrod 1px solid;
-  box-shadow: 0 0 10px yellow;
+  /* border: goldenrod 1px solid;
+  box-shadow: 0 0 10px yellow; */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin: auto;
   padding: 30px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  width: 87rem;
+
+  /* width: 87rem; */
 }
 
 .Home-logo {
@@ -57,8 +98,31 @@ body {
   padding: 30px;
 }
 .search {
-  width: 800px;
-  height: 30px;
+  width: 600px;
+  height: 50px;
+
+  border: none;
+  border-radius: 5px;
+}
+
+.header-button {
+  /* border: 1px blue solid; */
+  display: flex;
+  margin-top: 15px;
+}
+
+.header-button div > button {
+  width: 150px;
+  height: 40px;
+  background-color: black;
+  color: wheat;
+  box-shadow: 0 0 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+}
+.header-button div > button:hover {
+  color: white;
 }
 
 /* ------------------------ */
@@ -74,15 +138,17 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2.9rem;
 }
 
 .comic-card {
   border-radius: 10px;
   border: 1px solid goldenrod;
-  width: 350px;
-  height: 450px;
+  width: 15rem;
+  height: 18.75rem;
   box-shadow: 0 0 10px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-decoration: none;
 }
 
 .title-comic {
@@ -92,6 +158,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .picture-comic {
@@ -102,8 +169,7 @@ body {
   width: 100%;
   height: 100%;
   border-top: white;
-  border-radius: 0 0 10px 10px;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 
 /* ------------------------ */
@@ -126,7 +192,7 @@ body {
 .picture-characters img {
   width: 100%;
   height: 100%;
-  border-radius: 0 0 10px 10px;
+  margin-bottom: 5px;
 
   /* object-fit: cover; */
 }

@@ -17,6 +17,7 @@ const Comics = () => {
           "https://site--backend-marvel--mwwnkb6flj8h.code.run/comics"
         );
         console.log(response.data);
+        console.log(response.data.results);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -31,10 +32,11 @@ const Comics = () => {
   ) : (
     <main>
       <Header />
+
       <div className="container">
         <div className="card-container">
           {data.results.map((comic, index) => {
-            console.log(comic.title);
+            // console.log(comic.title);
             return (
               <article className="comic-card" key={index}>
                 <div className="title-comic">

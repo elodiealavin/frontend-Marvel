@@ -1,18 +1,33 @@
 import { Link } from "react-router-dom";
+// import logo from "../assets/new-logo.jpeg";
 
 const Home = () => {
   return (
-    <div className="Home">
-      <div className="logo-home">
-        <img
-          src=" https://res.cloudinary.com/lereacteur-apollo/image/upload/v1582097342/react-new-exercices/Marvel/langfr-1920px-MarvelLogo.svg_uw9pi8.png"
-          alt=""
-        />
-      </div>
-
-      <Link className="link-univers" to="/">
+    <div className="Home-container">
+      {/* <div className="logo-home">
+        <img className="hero" src={logo} alt="" />
+      </div> */}
+      <header className="home-title">
         <h1> Bienvenue dans l'univers Marvel </h1>
-      </Link>
+      </header>
+
+      <footer>
+        <div className="button-direction">
+          <Link to="/characters">
+            <div>
+              <button>Personnages</button>
+            </div>
+          </Link>
+          <Link to="/comics">
+            <div>
+              <button>Comics</button>
+            </div>
+          </Link>
+          <div>
+            <button>Favoris</button>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

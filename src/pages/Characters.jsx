@@ -2,6 +2,8 @@ import Header from "../Components/Header";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { Link } from "react-router-dom";
+
 const nameLenght = (text, maxLenght) => {
   return text.length > maxLenght ? text.slice(0, maxLenght) + "..." : text;
 };
@@ -34,21 +36,24 @@ const Characters = () => {
       <div className="container">
         <div className="card-container">
           {data.results.map((character, index) => {
-            console.log(character.name);
+            // console.log(character.name);
             return (
               <article className="comic-card" key={index}>
                 <div className="name-character">
                   <h2>{nameLenght(character.name, 14)}</h2>
+                  {/* console.log(character.name) */}
                 </div>
                 <div className="picture-characters">
-                  <img
-                    src={
-                      character.thumbnail.path +
-                      "." +
-                      character.thumbnail.extension
-                    }
-                    alt=""
-                  />
+                  <Link to={"/character/:characterId"}>
+                    <img
+                      src={
+                        character.thumbnail.path +
+                        "." +
+                        character.thumbnail.extension
+                      }
+                      alt=""
+                    />
+                  </Link>
                 </div>
               </article>
             );
