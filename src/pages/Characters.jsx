@@ -11,14 +11,18 @@ const nameLenght = (text, maxLenght) => {
 const Characters = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [totalItems, setTotalItems] = useState(0);
+  const [totalPage, setTotalPage] = useState(0);
 
   useEffect(() => {
     const fechData = async () => {
       try {
         const response = await axios.get(
-          "https://site--backend-marvel--mwwnkb6flj8h.code.run/characters"
+          `https://site--backend-marvel--mwwnkb6flj8h.code.run/characters?page=${page}`
         );
         console.log(response.data);
+        setTotalItems(response.data.count);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -26,7 +30,11 @@ const Characters = () => {
       }
     };
     fechData();
-  }, []);
+  }, [page]);
+
+  useEffect(() => {
+    setTotalPage(Math.ceil(totalItems / 100));
+  }, [totalItems]);
 
   return isLoading ? (
     <p>Loading ...</p>
@@ -59,6 +67,26 @@ const Characters = () => {
             );
           })}
         </div>
+      </div>
+      <div className="button-page">
+        <button
+          onClick={() => {
+            let pagination = page - 1;
+            setPage(pagination);
+          }}
+          disabled={page === 1 ? true : false}
+        >
+          Retour
+        </button>
+        <button
+          onClick={() => {
+            let pagination = page + 1;
+            setPage(pagination);
+          }}
+          disabled={page === totalPage ? true : false}
+        >
+          Suivant
+        </button>
       </div>
     </main>
   );

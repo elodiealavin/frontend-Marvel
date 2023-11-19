@@ -61,24 +61,26 @@ const Comics = () => {
           })}
         </div>
       </div>
-      <button
-        onClick={() => {
-          let pagination = page - 1;
-          setPage(pagination);
-        }}
-        disabled={page === 1 ? true : false}
-      >
-        Retour
-      </button>
-      <button
-        onClick={() => {
-          let pagination = page + 1;
-          setPage(pagination);
-        }}
-        disabled={page === totalPage ? true : false}
-      >
-        Suivant
-      </button>
+      <div className="button-page">
+        <button
+          onClick={() => {
+            let pagination = page - 1;
+            setPage(pagination);
+          }}
+          disabled={page === 1 ? true : false}
+        >
+          Retour
+        </button>
+        <button
+          onClick={() => {
+            let pagination = page + 1;
+            setPage(pagination);
+          }}
+          disabled={page === totalPage ? true : false}
+        >
+          Suivant
+        </button>
+      </div>
     </main>
   );
 };
