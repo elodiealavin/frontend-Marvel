@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Header from "../Components/Header";
 
 const CharactersComicsId = () => {
   const [data, setData] = useState();
@@ -21,6 +22,7 @@ const CharactersComicsId = () => {
         setIsLoading(false);
       } catch (error) {
         console.log(error.response);
+        setIsLoading(false);
       }
     };
     fechData();
@@ -28,12 +30,15 @@ const CharactersComicsId = () => {
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
-    <div>
-      {data.results.map((comic) => {
-        console.log("response", comic.title);
-      })}
-      ;
-    </div>
+    <main>
+      <Header />
+      <div>
+        {data.results.map((comic) => {
+          console.log("response", comic.title);
+        })}
+        ;
+      </div>
+    </main>
   );
 };
 
