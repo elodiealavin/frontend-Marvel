@@ -44,7 +44,7 @@ const Characters = () => {
                   {/* console.log(character.name) */}
                 </div>
                 <div className="picture-characters">
-                  <Link to={"/character/:characterId"}>
+                  <Link to={`/character/${character._id}`}>
                     <img
                       src={
                         character.thumbnail.path +
