@@ -3,7 +3,7 @@ body {
   color: white;
   background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/11025.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-size: cover;
 }
 

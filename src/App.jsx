@@ -8,14 +8,25 @@ import Home from "./pages/Home";
 import Comics from "./pages/Comics";
 import Characters from "./pages/Characters";
 import CharactersComicsId from "./pages/Characters-comics-Id";
-
+import { useState } from "react";
 const App = () => {
+  const [search, setSearch] = useState("");
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/comics" element={<Comics />} />
+        <Route
+          path="/characters"
+          search={search}
+          setSearch={setSearch}
+          element={<Characters />}
+        />
+        <Route
+          path="/comics"
+          search={search}
+          setSearch={setSearch}
+          element={<Comics />}
+        />
         <Route path="/character/:id" element={<CharactersComicsId />} />
       </Routes>
     </Router>

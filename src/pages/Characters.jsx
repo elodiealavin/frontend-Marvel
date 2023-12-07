@@ -14,12 +14,13 @@ const Characters = () => {
   const [page, setPage] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
   const [totalPage, setTotalPage] = useState(0);
+  const [searchCharacters, setSearchCharacters] = useState("");
 
   useEffect(() => {
     const fechData = async () => {
       try {
         const response = await axios.get(
-          `https://site--backend-marvel--mwwnkb6flj8h.code.run/characters?page=${page}`
+          `https://site--backend-marvel--mwwnkb6flj8h.code.run/characters?page=${page}&name=${searchCharacters}`
         );
         console.log(response.data);
         setTotalItems(response.data.count);
@@ -34,13 +35,13 @@ const Characters = () => {
 
   useEffect(() => {
     setTotalPage(Math.ceil(totalItems / 100));
-  }, [totalItems]);
+  }, [totalItems, searchCharacters]);
 
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
     <main>
-      <Header />
+      <Header search={searchCharacters} setSearch={setSearchCharacters} />
       <div className="container">
         <div className="card-container">
           {data.results.map((character, index) => {

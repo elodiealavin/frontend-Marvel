@@ -12,12 +12,15 @@ const Comics = () => {
   const [page, setPage] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
   const [totalPage, setTotalPage] = useState(0);
+  const [searchComics, setSearchComics] = useState("");
 
   useEffect(() => {
     const fechData = async () => {
       try {
         const response = await axios.get(
-          `https://site--backend-marvel--mwwnkb6flj8h.code.run/comics?page=${page}`
+          `https://site--backend-marvel--mwwnkb6flj8h.code.run/comics?page=${page}&title=${searchComics}`
+
+          // `http://localhost:3000/comics?page=${page}&title=${searchComics}`
         );
         // console.log("console 4", response.data);
         // console.log("console 5", response.data.results);
@@ -29,7 +32,7 @@ const Comics = () => {
       }
     };
     fechData();
-  }, [page]);
+  }, [page, searchComics]);
 
   useEffect(() => {
     setTotalPage(Math.ceil(totalItems / 100));
@@ -39,7 +42,7 @@ const Comics = () => {
     <p>Loading ...</p>
   ) : (
     <main>
-      <Header />
+      <Header search={searchComics} setSearch={setSearchComics} />
 
       <div className="container">
         <div className="card-container">

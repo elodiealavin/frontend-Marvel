@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import Search from "./Search";
+import { useLocation } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ search, setSearch }) => {
+  let location = useLocation();
+  console.log(location);
   return (
     <div className="header-container">
       <Link to="/">
@@ -10,9 +14,12 @@ const Header = () => {
           alt=" logo"
         />
       </Link>
-      <div className="input-search">
-        <input className="search" type="search" placeholder="Iron Man" />
-      </div>
+      {(location.pathname === "/comics" ||
+        location.pathname === "/characters") && (
+        <div className="input-search">
+          <Search search={search} setSearch={setSearch} />
+        </div>
+      )}
 
       <div className="header-button">
         <Link to="/characters">
