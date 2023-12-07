@@ -31,11 +31,11 @@ const Characters = () => {
       }
     };
     fechData();
-  }, [page]);
+  }, [page, searchCharacters]);
 
   useEffect(() => {
     setTotalPage(Math.ceil(totalItems / 100));
-  }, [totalItems, searchCharacters]);
+  }, [totalItems]);
 
   return isLoading ? (
     <p>Loading ...</p>
