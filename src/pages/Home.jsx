@@ -7,6 +7,7 @@ const Home = () => {
       {/* <div className="logo-home">
         <img className="hero" src={logo} alt="" />
       </div> */}
+
       <header className="home-title">
         <h1> Bienvenue dans l'univers Marvel </h1>
       </header>

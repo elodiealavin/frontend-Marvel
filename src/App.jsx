@@ -12,24 +12,26 @@ import { useState } from "react";
 const App = () => {
   const [search, setSearch] = useState("");
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/characters"
-          search={search}
-          setSearch={setSearch}
-          element={<Characters />}
-        />
-        <Route
-          path="/comics"
-          search={search}
-          setSearch={setSearch}
-          element={<Comics />}
-        />
-        <Route path="/character/:id" element={<CharactersComicsId />} />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/characters"
+            search={search}
+            setSearch={setSearch}
+            element={<Characters />}
+          />
+          <Route
+            path="/comics"
+            search={search}
+            setSearch={setSearch}
+            element={<Comics />}
+          />
+          <Route path="/character/:id" element={<CharactersComicsId />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 
